@@ -1,7 +1,7 @@
 const chalk = require("chalk"); // terminal string styling
 const { argv } = require("yargs");
 const yargs = require("yargs"); // command line args handler
-const notes = require("./note");
+const notes = require("./notes");
 
 console.log(chalk.hex("#58f540").underline("Notes-application"));
 
@@ -83,4 +83,4 @@ yargs.command({
 });
 
 yargs.parse(); // enable to print out message in console
-// yargs.showHelp() // show all description in this app.js when type node app.js
+// yargs.showHelp(); // show all description in this app.js when type node app.js

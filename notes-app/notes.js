@@ -9,15 +9,17 @@ const addNote = (title, body) => {
   const notes = loadNotes();
   const duplicateNote = notes.find((note) => note.title === title);
 
+  // debugger;
+
   if (!duplicateNote) {
     notes.push({
       title: title,
       body: body,
     });
     saveNotes(notes);
-    console.log("New note added!");
+    console.log(chalk.green("New note added!"));
   } else {
-    console.log("Note title taken!");
+    console.log(chalk.red("Note title taken!"));
   }
 };
 
@@ -55,7 +57,8 @@ const listNotes = () => {
 
   notes.forEach((note, index) => {
     console.log(
-        (index + 1) +
+      index +
+        1 +
         chalk.yellow(". title: ") +
         note.title +
         chalk.yellow(" body: ") +
@@ -70,10 +73,7 @@ const readNote = (title) => {
 
   if (note) {
     console.log(
-      chalk.yellow("title: ") +
-        note.title +
-        chalk.yellow(" body: ") +
-        note.body
+      chalk.yellow("title: ") + note.title + chalk.yellow(" body: ") + note.body
     );
   } else [console.log(chalk.red("Note not found!"))];
 };
